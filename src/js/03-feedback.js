@@ -33,14 +33,16 @@ function  handleSubmit(e) {
 
 function auditLocalStorage() {
   const savedFormData = localStorage.getItem("feedback-form-state");
-  try {
-    const savedFormDataParse = JSON.parse(savedFormData);
-    console.log(savedFormDataParse)
-    console.log(savedFormData)
-    refs.input.value = savedFormDataParse.email;
-    refs.textarea.value = savedFormDataParse.message;
-}catch(erorr){
-  console.log(erorr)
-};
+  if (savedFormData) {
+    try {   
+      const savedFormDataParse = JSON.parse(savedFormData);
+      console.log(savedFormDataParse)
+      console.log(savedFormData)
+      refs.input.value = savedFormDataParse.email;
+      refs.textarea.value = savedFormDataParse.message;
+      }catch(erorr){
+        console.log(erorr)
+      };
+    }
 }
 
