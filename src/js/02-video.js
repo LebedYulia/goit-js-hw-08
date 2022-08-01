@@ -13,5 +13,6 @@ function writeCurrentTime({seconds}) {
    console.log({seconds})
 }
 
-const currentTime = localStorage.getItem("videoplayer-current-time");
+const valueLocalStorage =  localStorage.getItem("videoplayer-current-time");
+const currentTime = valueLocalStorage ?  valueLocalStorage : 0;
 player.setCurrentTime(currentTime);
